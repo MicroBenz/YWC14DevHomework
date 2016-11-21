@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>YWC#14 Homework by MicroBenz</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            margin: 0;
+        }
+        .ywc-container {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="ywc-container">
+        <svg width="400" height="200">
+            <path fill="none" stroke="#000000" stroke-miterlimit="10" d="M269.839,24.013V169.22c0,0,0,11.194,3.957,11.194
+                c2.196,0,4.177-1.75,4.177-11.194c0-25.186,0-144.444,0-144.444s1.818-5.189,3.966-5.189c2.07,0,4.168,3.132,4.168,5.189
+                c0,14.074,0,147.504,0,147.504"/>
+            <path fill="none" stroke="#000000" stroke-miterlimit="10" d="M293.59,19.586h54.818c0,0,4.248,0,4.248,3.957
+                c0,2.196-0.664,4.177-4.248,4.177c-9.558,0-54.818,0-54.818,0s-1.971,1.818-1.971,3.966c0,2.07,1.189,4.168,1.971,4.168
+                c5.341,0,55.1,0,55.1,0"/>
+            <path fill="none" stroke="#000000" stroke-miterlimit="10" d="M293.59,164.146h54.818c0,0,4.248,0,4.248,3.957
+                c0,2.196-0.664,4.177-4.248,4.177c-9.558,0-54.818,0-54.818,0s-1.971,1.818-1.971,3.967c0,2.07,1.189,4.168,1.971,4.168
+                c5.341,0,55.1,0,55.1,0"/>
+            <polygon id="char-c-back" fill="yellow" stroke="#000000" stroke-miterlimit="10" points="264.562,14.367 264.562,187.679 358.774,187.679 
+                358.774,157.775 293.074,157.775 293.074,41.055 358.774,41.055 358.774,14.367 "/>
+        </svg>
+    </div>
+    <script>
+        var charC = document.getElementById("char-c-back");
+        var opacity = 1.0;
+        var isDecreaseOpacity = true;
+        setInterval(function () {
+            // var randomNum = randomNumber();
+            // if (randomNum === 1) {
+            //     document.getElementById("test1").style.stroke = "red";
+            // }
+            // else {
+            //     document.getElementById("test2").style.stroke = "blue";
+            // }
+            if (isDecreaseOpacity) {
+                opacity -= 0.1;
+            }
+            else {
+                opacity += 0.1;
+            }
+            if (opacity < 0 && isDecreaseOpacity) {
+                isDecreaseOpacity = false;
+            }
+            else if (opacity > 1 && !isDecreaseOpacity) {
+                isDecreaseOpacity = true;
+            }
+            charC.style.opacity = opacity;
+        }, 50);
+
+    </script>
+</body>
+</html>
