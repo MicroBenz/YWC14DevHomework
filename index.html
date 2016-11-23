@@ -1,6 +1,9 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>YWC#14 Homework by MicroBenz</title>
     <style>
         html, body {
@@ -11,49 +14,66 @@
             margin: 0;
         }
         .ywc-container {
-            background-color: #ffffff;
+            background-color: #1b1a1a;
             height: 100%;
             width: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                    justify-content: center;
         }
         .path-draw {
             stroke-width: 4px;
             stroke-dasharray: 2000;
             stroke-dashoffset: 2000;
-            animation: dash 5s linear forwards;
-                       /*fillColor 5s linear forwards;*/
+            -webkit-animation: drawPath 5s linear forwards;
+                    animation: drawPath 5s linear forwards;
         }
-        @keyframes dash {
-            to {
+        @-webkit-keyframes drawPath {
+            to {          
                 stroke-dashoffset: 0;
             }
         }
-        @keyframes fillColor {
-            to {
-                fill: black;
+        @keyframes drawPath {
+            to {          
+                stroke-dashoffset: 0;
             }
+        }
+        .credit-text {
+            color: #ffffff;
+            font-weight: 200;
+            font-size: 1.6em;
         }
     </style>
 </head>
 <body>
     <div class="ywc-container">
-        <svg width="500" height="200">
-            <path class="path-draw" fill="none" stroke="url(#rainbowGradient)" d="M120.074,163.229h-18.982l23.749-49.838l-33.197-69.34h20.195l22.623,48.798l22.622-48.798h20.108L120.074,163.229z"/>
-            <path class="path-draw" fill="none" stroke="url(#rainbowGradient)" d="M236.218,106.805V44.051h17.942v61.28c0,3.179,1.068,5.822,3.207,7.931c2.137,2.11,4.682,3.163,7.627,3.163
-                c7.107,0,10.662-4.42,10.662-13.261V44.051h18.027v62.493c-0.289,7.628-3.092,14.1-8.406,19.416
-                c-5.605,5.663-12.367,8.494-20.283,8.494c-7.973,0-14.533-2.774-19.675-8.321c-5.259,5.547-11.846,8.321-19.762,8.321
-                c-7.974,0-14.765-2.831-20.369-8.494c-5.317-5.316-8.091-11.788-8.321-19.416V44.051h17.941v59.113
-                c0,8.841,3.583,13.261,10.748,13.261c2.947,0,5.489-1.04,7.627-3.12C234.975,111.515,235.987,109.348,236.218,106.805z"/>
-            <path class="path-draw" fill="none" stroke="url(#rainbowGradient)"  d="M390.414,102.644l17.941,6.414c-4.393,6.067-7.57,10.084-9.535,12.048c-9.65,9.651-21.293,14.475-34.93,14.475
-                c-13.58,0-25.193-4.823-34.844-14.475c-9.65-9.649-14.475-21.292-14.475-34.93c0-13.637,4.824-25.279,14.475-34.93
-                c9.65-9.649,21.264-14.475,34.844-14.475c13.637,0,25.279,4.825,34.93,14.475c1.965,1.965,5.143,5.924,9.535,11.875l-17.941,6.587
-                c-2.312-2.831-3.873-4.651-4.682-5.461c-6.01-6.009-13.291-9.014-21.842-9.014c-8.494,0-15.762,3.02-21.799,9.058
-                c-6.039,6.039-9.057,13.334-9.057,21.886c0,8.494,3.018,15.761,9.057,21.799c6.037,6.039,13.305,9.058,21.799,9.058
-                c8.551,0,15.861-3.004,21.93-9.015C386.57,107.209,388.102,105.418,390.414,102.644z"/>
+        <svg width="61%" height="100%" viewBox="0 0 500 200">
+            <g id="ywc-group">
+                <path class="path-draw" stroke="url(#animateGradient)" fill="none" d="M68.962,188.103h-26.45l33.092-69.444L29.347,22.041h28.14l31.522,67.996l31.522-67.996h28.019L68.962,188.103z"/>
+                <path class="path-draw" stroke="url(#animateGradient)" fill="none" d="M230.796,109.481V22.041h25v85.388c0,4.429,1.489,8.11,4.47,11.05c2.977,2.941,6.522,4.408,10.627,4.408
+                    c9.903,0,14.857-6.159,14.857-18.478V22.041h25.118v87.079c-0.402,10.628-4.31,19.647-11.713,27.055
+                    c-7.812,7.891-17.232,11.835-28.263,11.835c-11.108,0-20.251-3.866-27.416-11.595c-7.327,7.729-16.505,11.595-27.535,11.595
+                    c-11.111,0-20.574-3.944-28.383-11.835c-7.408-7.407-11.273-16.427-11.594-27.055V22.041h24.999v82.369
+                    c0,12.318,4.992,18.478,14.976,18.478c4.106,0,7.648-1.449,10.628-4.349C229.064,116.046,230.475,113.025,230.796,109.481z"/>
+                <path class="path-draw" stroke="url(#animateGradient)" fill="none" d="M445.652,103.685l25,8.938c-6.122,8.452-10.548,14.05-13.286,16.785c-13.446,13.448-29.669,20.171-48.671,20.171
+                    c-18.922,0-35.104-6.722-48.554-20.171c-13.444-13.444-20.169-29.667-20.169-48.671c0-19.001,6.722-35.223,20.169-48.671
+                    c13.446-13.445,29.632-20.169,48.554-20.169c19.002,0,35.222,6.723,48.671,20.169c2.738,2.738,7.165,8.254,13.286,16.547l-25,9.178
+                    c-3.222-3.945-5.396-6.48-6.522-7.609c-8.374-8.374-18.52-12.561-30.435-12.561c-11.836,0-21.965,4.208-30.376,12.622
+                    c-8.415,8.415-12.619,18.579-12.619,30.496c0,11.835,4.204,21.961,12.619,30.376c8.411,8.414,18.54,12.621,30.376,12.621
+                    c11.915,0,22.1-4.187,30.557-12.562C440.297,110.045,442.431,107.55,445.652,103.685z"/>
+            </g>
             <defs>
-                <linearGradient id="rainbowGradient" x1="100%" y1="100%">
+                <linearGradient id="animateGradient" x1="100%" y1="100%" begin="dash.end">
                     <stop offset="0%" stop-opacity=".5">
                         <animate attributeName="stop-color"
                             values="#8bc3d3;#5e9aa6;#8fbe68;#ccd250;#f2d44f;#e38f47;#d573a5;#b06ba7;#d573a5;#e38f47;#f2d44f;#ccd250;#8fbe68;#5e9aa6;#8bc3d3"
@@ -65,24 +85,17 @@
                             values="#5e9aa6;#8fbe68;#ccd250;#f2d44f;#e38f47;#d573a5;#b06ba7;#d573a5;#e38f47;#f2d44f;#ccd250;#8fbe68;#5e9aa6;#8bc3d3;#5e9aa6"
                             dur="14s"
                             repeatCount="indefinite" />
-                        <!--<animate attributeName="offset" values=".95;.80;.60;.40;.20;0;.20;.40;.60;.80;.95" dur="14s" repeatCount="indefinite" />-->
                     </stop>
                 </linearGradient>
-                <filter id="dropShadow" width="1.5" height="1.5" x="-0.25" y="-0.25">
-                    <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="blur" />
-                    <feColorMatrix result="bluralpha" type="matrix" values=
-                        "1 0 0 0   0
-                        0 1 0 0   0
-                        0 0 1 0   0
-                        0 0 0 0.4 0" />
-                    <feOffset in="bluralpha" dx="5" dy="5" result="offsetBlur" />
-                    <feMerge>
-                        <feMergeNode in="offsetBlur" />
-                        <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                </filter>
+                <linearGradient id="startGradient" x1="100%" y1="100%">
+                    <stop offset="0%" stop-color="#8bc3d3"></stop>
+                    <stop offset="100%" stop-color="#5e9aa6"></stop>                    
+                </lineargradient>
             </defs>
         </svg>
+        <div>
+            <h1 class="credit-text">Presented by Tananan Tangthanachaikul (MicroBenz)</h1>
+        </div>
     </div>
     <script>
         
