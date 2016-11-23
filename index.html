@@ -18,9 +18,10 @@
             align-items: center;
             justify-content: center;
         }
-        .y-path {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
+        .path-draw {
+            stroke-width: 4px;
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 2000;
             animation: dash 5s linear forwards;
                        /*fillColor 5s linear forwards;*/
         }
@@ -39,25 +40,31 @@
 <body>
     <div class="ywc-container">
         <svg width="500" height="200">
-            <path class="y-path" fill="none" stroke="url(#skyGradient)" d="M120.074,163.229h-18.982l23.749-49.838l-33.197-69.34h20.195l22.623,48.798l22.622-48.798h20.108L120.074,163.229z"/>
-            <path filter="url(#dropShadow)" d="M236.218,106.805V44.051h17.942v61.28c0,3.179,1.068,5.822,3.207,7.931c2.137,2.11,4.682,3.163,7.627,3.163
+            <path class="path-draw" fill="none" stroke="url(#rainbowGradient)" d="M120.074,163.229h-18.982l23.749-49.838l-33.197-69.34h20.195l22.623,48.798l22.622-48.798h20.108L120.074,163.229z"/>
+            <path class="path-draw" fill="none" stroke="url(#rainbowGradient)" d="M236.218,106.805V44.051h17.942v61.28c0,3.179,1.068,5.822,3.207,7.931c2.137,2.11,4.682,3.163,7.627,3.163
                 c7.107,0,10.662-4.42,10.662-13.261V44.051h18.027v62.493c-0.289,7.628-3.092,14.1-8.406,19.416
                 c-5.605,5.663-12.367,8.494-20.283,8.494c-7.973,0-14.533-2.774-19.675-8.321c-5.259,5.547-11.846,8.321-19.762,8.321
                 c-7.974,0-14.765-2.831-20.369-8.494c-5.317-5.316-8.091-11.788-8.321-19.416V44.051h17.941v59.113
                 c0,8.841,3.583,13.261,10.748,13.261c2.947,0,5.489-1.04,7.627-3.12C234.975,111.515,235.987,109.348,236.218,106.805z"/>
-            <path d="M390.414,102.644l17.941,6.414c-4.393,6.067-7.57,10.084-9.535,12.048c-9.65,9.651-21.293,14.475-34.93,14.475
+            <path class="path-draw" fill="none" stroke="url(#rainbowGradient)"  d="M390.414,102.644l17.941,6.414c-4.393,6.067-7.57,10.084-9.535,12.048c-9.65,9.651-21.293,14.475-34.93,14.475
                 c-13.58,0-25.193-4.823-34.844-14.475c-9.65-9.649-14.475-21.292-14.475-34.93c0-13.637,4.824-25.279,14.475-34.93
                 c9.65-9.649,21.264-14.475,34.844-14.475c13.637,0,25.279,4.825,34.93,14.475c1.965,1.965,5.143,5.924,9.535,11.875l-17.941,6.587
                 c-2.312-2.831-3.873-4.651-4.682-5.461c-6.01-6.009-13.291-9.014-21.842-9.014c-8.494,0-15.762,3.02-21.799,9.058
                 c-6.039,6.039-9.057,13.334-9.057,21.886c0,8.494,3.018,15.761,9.057,21.799c6.037,6.039,13.305,9.058,21.799,9.058
                 c8.551,0,15.861-3.004,21.93-9.015C386.57,107.209,388.102,105.418,390.414,102.644z"/>
             <defs>
-                <linearGradient id="skyGradient" x1="100%" y1="100%">
-                    <stop offset="0%" stop-color="lightblue" stop-opacity=".5">
-                        <animate attributeName="stop-color" values="lightblue;blue;red;red;black;red;red;purple;lightblue" dur="14s" repeatCount="indefinite" />
+                <linearGradient id="rainbowGradient" x1="100%" y1="100%">
+                    <stop offset="0%" stop-opacity=".5">
+                        <animate attributeName="stop-color"
+                            values="#8bc3d3;#5e9aa6;#8fbe68;#ccd250;#f2d44f;#e38f47;#d573a5;#b06ba7;#d573a5;#e38f47;#f2d44f;#ccd250;#8fbe68;#5e9aa6;#8bc3d3"
+                            dur="14s"
+                            repeatCount="indefinite" />
                     </stop>
-                    <stop offset="100%" stop-color="lightblue" stop-opacity=".5">
-                        <animate attributeName="stop-color" values="lightblue;orange;purple;purple;black;purple;purple;blue;lightblue" dur="14s" repeatCount="indefinite" />
+                    <stop offset="100%" stop-opacity=".5">
+                        <animate attributeName="stop-color"
+                            values="#5e9aa6;#8fbe68;#ccd250;#f2d44f;#e38f47;#d573a5;#b06ba7;#d573a5;#e38f47;#f2d44f;#ccd250;#8fbe68;#5e9aa6;#8bc3d3;#5e9aa6"
+                            dur="14s"
+                            repeatCount="indefinite" />
                         <!--<animate attributeName="offset" values=".95;.80;.60;.40;.20;0;.20;.40;.60;.80;.95" dur="14s" repeatCount="indefinite" />-->
                     </stop>
                 </linearGradient>
