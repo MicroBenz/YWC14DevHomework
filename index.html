@@ -31,6 +31,10 @@
             -ms-flex-pack: center;
                     justify-content: center;
         }
+        .ywc-svg-wrapper {
+            width: 65%;
+            height: 100%;
+        }
         .path-draw {
             stroke-width: 4px;
             stroke-dasharray: 2000;
@@ -52,12 +56,24 @@
             color: #ffffff;
             font-weight: 200;
             font-size: 1.6em;
+            text-align: center;
         }
+        @media only screen 
+            and (min-device-width : 320px) 
+            and (max-device-width : 568px) {
+                .ywc-svg-wrapper {
+                    width: 80%;                    
+                }
+                .credit-text {
+                    font-size: 1.0em;
+                }
+            }
+
     </style>
 </head>
 <body>
     <div class="ywc-container">
-        <svg width="61%" height="100%" viewBox="0 0 500 200">
+        <svg class="ywc-svg-wrapper" viewBox="0 0 500 200">
             <g id="ywc-group">
                 <path class="path-draw" stroke="url(#animateGradient)" fill="none" d="M68.962,188.103h-26.45l33.092-69.444L29.347,22.041h28.14l31.522,67.996l31.522-67.996h28.019L68.962,188.103z"/>
                 <path class="path-draw" stroke="url(#animateGradient)" fill="none" d="M230.796,109.481V22.041h25v85.388c0,4.429,1.489,8.11,4.47,11.05c2.977,2.941,6.522,4.408,10.627,4.408
